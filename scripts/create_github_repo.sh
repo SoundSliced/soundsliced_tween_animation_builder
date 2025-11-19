@@ -105,8 +105,7 @@ if command -v gh >/dev/null 2>&1; then
         echo "DRY RUN: gh repo create failed or would have failed. Skipping push."
       }
     fi
-      echo "gh repo create failed. Falling back to API if token available..."
-    }
+      fi
   fi
 else
   echo "GitHub CLI not found. Will try GitHub API with GITHUB_TOKEN fallback."
