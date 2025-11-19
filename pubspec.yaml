@@ -1,5 +1,5 @@
 name: soundsliced_tween_animation_builder
-description: A Flutter package for animation functionality
+description: A Flutter package providing a custom TweenAnimationBuilder that uses Timer-based animations, surviving hot restarts without engine assertions.
 version: 1.0.0
 homepage: https://github.com/Soundsliced/soundsliced_tween_animation_builder
 
