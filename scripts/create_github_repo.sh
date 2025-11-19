@@ -97,16 +97,15 @@ if command -v gh >/dev/null 2>&1; then
       gh auth login
     fi
     if [ "$DRY_RUN" = false ]; then
-      gh repo create $USERNAME/$REPO --public --description "$DESCRIPTION" --license mit --source=. --remote=origin --push --confirm || {
+      gh repo create $USERNAME/$REPO --public --description "$DESCRIPTION" --license mit || {
         echo "gh repo create failed. Falling back to API if token available..."
       }
     else
-      gh repo create $USERNAME/$REPO --public --description "$DESCRIPTION" --license mit --source=. --remote=origin --confirm || {
+      gh repo create $USERNAME/$REPO --public --description "$DESCRIPTION" --license mit || {
         echo "DRY RUN: gh repo create failed or would have failed. Skipping push."
       }
     fi
       fi
-  fi
 else
   echo "GitHub CLI not found. Will try GitHub API with GITHUB_TOKEN fallback."
   if [ -z "$GITHUB_TOKEN" ]; then
