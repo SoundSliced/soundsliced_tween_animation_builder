@@ -45,8 +45,13 @@ void main() {
       ),
     );
 
-    // Wait for animation to complete
-    await tester.pumpAndSettle();
+    // Initial pump
+    await tester.pump();
+
+    // Wait for animation to complete with enough pumps
+    for (int i = 0; i < 10; i++) {
+      await tester.pump(const Duration(milliseconds: 20));
+    }
 
     expect(animationEnded, isTrue);
     expect(find.text('Value: 100.0'), findsOneWidget);
@@ -122,7 +127,7 @@ void main() {
       MaterialApp(
         home: MyTweenAnimationBuilder<double>(
           tween: Tween(begin: 0.0, end: 100.0),
-          duration: const Duration(milliseconds: 50),
+          duration: const Duration(milliseconds: 100),
           autoRepeat: true,
           onEnd: () {
             completionCount++;
@@ -134,13 +139,15 @@ void main() {
       ),
     );
 
-    // Let multiple cycles complete
-    await tester.pump(const Duration(milliseconds: 50));
-    await tester.pump(const Duration(milliseconds: 20));
-    await tester.pump(const Duration(milliseconds: 50));
-    await tester.pump(const Duration(milliseconds: 20));
+    // Initial pump
+    await tester.pump();
 
-    // Should have completed at least once
+    // Let multiple cycles complete - pump enough times for at least 2 cycles
+    for (int i = 0; i < 15; i++) {
+      await tester.pump(const Duration(milliseconds: 20));
+    }
+
+    // Should have completed at least once (300ms elapsed, 100ms per cycle = 3 cycles)
     expect(completionCount, greaterThan(0));
   });
 }
