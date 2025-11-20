@@ -147,3 +147,7 @@ A widget that animates a value of type `T` using a `Tween`.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Repository
+
+https://github.com/Soundsliced/soundsliced_tween_animation_builder

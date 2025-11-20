@@ -1,3 +1,7 @@
+## 1.1.1
+
+* Version 1.1.1
+
 ## [1.1.0] - 2025-11-19
 
 * Improved documentation and examples in README.md
