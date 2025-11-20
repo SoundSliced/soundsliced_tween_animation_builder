@@ -17,7 +17,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  soundsliced_tween_animation_builder: ^1.1.0
+  soundsliced_tween_animation_builder: ^1.1.1
 ```
 
 Then run:
@@ -36,28 +36,37 @@ import 'package:soundsliced_tween_animation_builder/soundsliced_tween_animation_
 
 ### Basic Example
 
+Here's the example from the `example/` directory:
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:soundsliced_tween_animation_builder/soundsliced_tween_animation_builder.dart';
 
-class MyWidget extends StatelessWidget {
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MyTweenAnimationBuilder<double>(
-      tween: Tween<double>(begin: 0.0, end: 1.0),
-      duration: Duration(seconds: 2),
-      curve: Curves.easeInOut,
-      builder: (context, value, child) {
-        return Opacity(
-          opacity: value,
-          child: Container(
-            width: 100,
-            height: 100,
-            color: Colors.blue,
-            child: Center(child: Text('Fading In')),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Example')),
+        body: Center(
+          child: MyTweenAnimationBuilder<double>(
+            tween: Tween(begin: 0.0, end: 1.0),
+            duration: const Duration(seconds: 2),
+            builder: (context, value, child) {
+              return Opacity(
+                opacity: value,
+                child: const Text('Animated Text'),
+              );
+            },
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

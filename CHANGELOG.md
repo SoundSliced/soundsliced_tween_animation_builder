@@ -1,6 +1,9 @@
-## 1.1.1
+## [1.1.1] - 2025-11-20
 
-* Version 1.1.1
+* Fixed BSD sed compatibility issues in release script for macOS
+* Improved package release automation
+* Updated documentation and examples
+* Enhanced test coverage
 
 ## [1.1.0] - 2025-11-19
 
