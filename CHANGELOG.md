@@ -1,3 +1,9 @@
+## [1.2.0] - 2025-11-24
+
+* Breaking: renamed the widget to `STweenAnimationBuilder`.
+* Migration: replace usages of the previous widget name with `STweenAnimationBuilder`. The constructor API and behavior remain the same.
+* Updated README and examples accordingly.
+
 ## [1.1.1] - 2025-11-20
 
 * Fixed BSD sed compatibility issues in release script for macOS

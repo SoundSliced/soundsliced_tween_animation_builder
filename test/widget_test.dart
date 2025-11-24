@@ -3,11 +3,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:soundsliced_tween_animation_builder/soundsliced_tween_animation_builder.dart';
 
 void main() {
-  testWidgets('MyTweenAnimationBuilder animates correctly',
+  testWidgets('STweenAnimationBuilder animates correctly',
       (WidgetTester tester) async {
     await tester.pumpWidget(
       MaterialApp(
-        home: MyTweenAnimationBuilder<double>(
+        home: STweenAnimationBuilder<double>(
           tween: Tween(begin: 0.0, end: 100.0),
           duration: const Duration(seconds: 1),
           builder: (context, value, child) {
@@ -26,11 +26,11 @@ void main() {
     expect(find.textContaining('Value:'), findsOneWidget);
   });
 
-  testWidgets('MyTweenAnimationBuilder renders with initial value',
+  testWidgets('STweenAnimationBuilder renders with initial value',
       (WidgetTester tester) async {
     await tester.pumpWidget(
       MaterialApp(
-        home: MyTweenAnimationBuilder<double>(
+        home: STweenAnimationBuilder<double>(
           tween: Tween(begin: 0.0, end: 100.0),
           duration: const Duration(milliseconds: 100),
           builder: (context, value, child) {
@@ -47,13 +47,13 @@ void main() {
     expect(find.text('Value: 0.0'), findsOneWidget);
   });
 
-  testWidgets('MyTweenAnimationBuilder restarts with new key',
+  testWidgets('STweenAnimationBuilder restarts with new key',
       (WidgetTester tester) async {
     Object? animationKey = Object();
 
     await tester.pumpWidget(
       MaterialApp(
-        home: MyTweenAnimationBuilder<double>(
+        home: STweenAnimationBuilder<double>(
           tween: Tween(begin: 0.0, end: 100.0),
           duration: const Duration(milliseconds: 200),
           animationKey: animationKey,
@@ -74,7 +74,7 @@ void main() {
     animationKey = Object();
     await tester.pumpWidget(
       MaterialApp(
-        home: MyTweenAnimationBuilder<double>(
+        home: STweenAnimationBuilder<double>(
           tween: Tween(begin: 0.0, end: 100.0),
           duration: const Duration(milliseconds: 200),
           animationKey: animationKey,
@@ -89,11 +89,11 @@ void main() {
     expect(find.text('Value: 0.0'), findsOneWidget);
   });
 
-  testWidgets('MyTweenAnimationBuilder applies curve',
+  testWidgets('STweenAnimationBuilder applies curve',
       (WidgetTester tester) async {
     await tester.pumpWidget(
       MaterialApp(
-        home: MyTweenAnimationBuilder<double>(
+        home: STweenAnimationBuilder<double>(
           tween: Tween(begin: 0.0, end: 100.0),
           duration: const Duration(milliseconds: 100),
           curve: Curves.easeInOut,
@@ -109,12 +109,12 @@ void main() {
     expect(find.textContaining('Value:'), findsOneWidget);
   });
 
-  testWidgets('MyTweenAnimationBuilder accepts all constructor parameters',
+  testWidgets('STweenAnimationBuilder accepts all constructor parameters',
       (WidgetTester tester) async {
     // Test that widget can be created with all parameters
     await tester.pumpWidget(
       MaterialApp(
-        home: MyTweenAnimationBuilder<double>(
+        home: STweenAnimationBuilder<double>(
           tween: Tween(begin: 0.0, end: 100.0),
           duration: const Duration(milliseconds: 100),
           curve: Curves.easeInOut,

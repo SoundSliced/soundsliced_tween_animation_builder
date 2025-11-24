@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text('Example')),
         body: Center(
-          child: MyTweenAnimationBuilder<double>(
+          child: STweenAnimationBuilder<double>(
             tween: Tween(begin: 0.0, end: 1.0),
             duration: const Duration(seconds: 2),
             builder: (context, value, child) {

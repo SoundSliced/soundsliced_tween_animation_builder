@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 /// A drop-in replacement for [TweenAnimationBuilder] that avoids relying on
 /// ticker providers so it survives hot restarts without engine assertions.
-class MyTweenAnimationBuilder<T> extends StatefulWidget {
-  const MyTweenAnimationBuilder({
+class STweenAnimationBuilder<T> extends StatefulWidget {
+  const STweenAnimationBuilder({
     super.key,
     required this.tween,
     required this.duration,
@@ -27,12 +27,11 @@ class MyTweenAnimationBuilder<T> extends StatefulWidget {
   final bool autoRepeat;
 
   @override
-  State<MyTweenAnimationBuilder<T>> createState() =>
-      _MyTweenAnimationBuilderState<T>();
+  State<STweenAnimationBuilder<T>> createState() =>
+      _STweenAnimationBuilderState<T>();
 }
 
-class _MyTweenAnimationBuilderState<T>
-    extends State<MyTweenAnimationBuilder<T>> {
+class _STweenAnimationBuilderState<T> extends State<STweenAnimationBuilder<T>> {
   static const _frameInterval = Duration(milliseconds: 16);
 
   Timer? _ticker;
@@ -47,7 +46,7 @@ class _MyTweenAnimationBuilderState<T>
   }
 
   @override
-  void didUpdateWidget(covariant MyTweenAnimationBuilder<T> oldWidget) {
+  void didUpdateWidget(covariant STweenAnimationBuilder<T> oldWidget) {
     super.didUpdateWidget(oldWidget);
     final hasChangedTween = _hasTweenChanged(widget.tween, oldWidget.tween);
     final keyChanged = widget.animationKey != oldWidget.animationKey;

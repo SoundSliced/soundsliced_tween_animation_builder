@@ -17,7 +17,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  soundsliced_tween_animation_builder: ^1.1.1
+  soundsliced_tween_animation_builder: ^1.2.0
 ```
 
 Then run:
@@ -25,6 +25,15 @@ Then run:
 ```bash
 flutter pub get
 ```
+
+## Breaking change in 1.2.0
+
+The widget has been renamed to `STweenAnimationBuilder`.
+
+Migration:
+
+- Replace any previous widget name from earlier versions with `STweenAnimationBuilder`.
+- The constructor parameters and behavior are unchanged.
 
 ## Usage
 
@@ -55,7 +64,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text('Example')),
         body: Center(
-          child: MyTweenAnimationBuilder<double>(
+          child: STweenAnimationBuilder<double>(
             tween: Tween(begin: 0.0, end: 1.0),
             duration: const Duration(seconds: 2),
             builder: (context, value, child) {
@@ -75,7 +84,7 @@ class MyApp extends StatelessWidget {
 ### Auto-Repeat Animation
 
 ```dart
-MyTweenAnimationBuilder<double>(
+STweenAnimationBuilder<double>(
   tween: Tween<double>(begin: 0.0, end: 360.0),
   duration: Duration(seconds: 2),
   autoRepeat: true,
@@ -114,7 +123,7 @@ class _RestartableAnimationState extends State<RestartableAnimation> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        MyTweenAnimationBuilder<double>(
+        STweenAnimationBuilder<double>(
           tween: Tween<double>(begin: 0.0, end: 100.0),
           duration: Duration(seconds: 1),
           animationKey: _animationKey,
@@ -138,7 +147,7 @@ class _RestartableAnimationState extends State<RestartableAnimation> {
 
 ## API Reference
 
-### MyTweenAnimationBuilder<T>
+### STweenAnimationBuilder<T>
 
 A widget that animates a value of type `T` using a `Tween`.
 
