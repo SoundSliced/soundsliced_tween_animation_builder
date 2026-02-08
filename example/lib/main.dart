@@ -1,4 +1,3 @@
-
 import 'package:soundsliced_tween_animation_builder/soundsliced_tween_animation_builder.dart';
 
 void main() {
