@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:soundsliced_tween_animation_builder/soundsliced_tween_animation_builder.dart';
 
