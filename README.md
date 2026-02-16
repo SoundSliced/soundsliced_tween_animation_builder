@@ -17,7 +17,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  soundsliced_tween_animation_builder: ^2.0.0
+  soundsliced_tween_animation_builder: ^2.1.0
 ```
 
 Then run:
@@ -161,6 +161,8 @@ A widget that animates a value of type `T` using a `Tween`.
 - `onEnd`: Callback function called when the animation completes
 - `animationKey`: Key to restart the animation when changed
 - `autoRepeat`: Whether to automatically repeat the animation (default: false)
+- `delay`: Optional `Duration` for a pre-animation delay before the animation starts
+- `repeatCount`: Optional `int` to limit the number of auto-repeat cycles (requires `autoRepeat: true`)
 
 ## License
 
