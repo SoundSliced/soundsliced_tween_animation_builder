@@ -17,7 +17,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  soundsliced_tween_animation_builder: ^2.1.0
+  soundsliced_tween_animation_builder: ^3.0.0
 ```
 
 Then run:
